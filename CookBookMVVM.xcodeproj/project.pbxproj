@@ -12,6 +12,7 @@
 		8480C42B26C2BFD800057641 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8480C42926C2BFD800057641 /* Main.storyboard */; };
 		8480C42D26C2BFD800057641 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8480C42C26C2BFD800057641 /* Assets.xcassets */; };
 		8480C43026C2BFD800057641 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8480C42E26C2BFD800057641 /* LaunchScreen.storyboard */; };
+		A2DFDFE304BB3D540901028A /* Pods_CookBookMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3CD41241DD49B34802B4B52 /* Pods_CookBookMVVM.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		8480C42C26C2BFD800057641 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8480C42F26C2BFD800057641 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8480C43126C2BFD800057641 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A90CDF9FC1FD8A386A60689 /* Pods-CookBookMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CookBookMVVM.debug.xcconfig"; path = "Target Support Files/Pods-CookBookMVVM/Pods-CookBookMVVM.debug.xcconfig"; sourceTree = "<group>"; };
+		CA0FBA7F9CFDB174FD70EC02 /* Pods-CookBookMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CookBookMVVM.release.xcconfig"; path = "Target Support Files/Pods-CookBookMVVM/Pods-CookBookMVVM.release.xcconfig"; sourceTree = "<group>"; };
+		D3CD41241DD49B34802B4B52 /* Pods_CookBookMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CookBookMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2DFDFE304BB3D540901028A /* Pods_CookBookMVVM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23902FC9431ADA6A77DA4734 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A90CDF9FC1FD8A386A60689 /* Pods-CookBookMVVM.debug.xcconfig */,
+				CA0FBA7F9CFDB174FD70EC02 /* Pods-CookBookMVVM.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7B145C497B0D7F2CE58280AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3CD41241DD49B34802B4B52 /* Pods_CookBookMVVM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8480C41726C2BFD800057641 = {
 			isa = PBXGroup;
 			children = (
 				8480C42226C2BFD800057641 /* CookBookMVVM */,
 				8480C42126C2BFD800057641 /* Products */,
+				23902FC9431ADA6A77DA4734 /* Pods */,
+				7B145C497B0D7F2CE58280AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8480C43426C2BFD800057641 /* Build configuration list for PBXNativeTarget "CookBookMVVM" */;
 			buildPhases = (
+				7112CDF3427EDDF6A51AEFB8 /* [CP] Check Pods Manifest.lock */,
 				8480C41C26C2BFD800057641 /* Sources */,
 				8480C41D26C2BFD800057641 /* Frameworks */,
 				8480C41E26C2BFD800057641 /* Resources */,
+				B06029FF609FA4B23D6B8F6D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,6 +155,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7112CDF3427EDDF6A51AEFB8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CookBookMVVM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B06029FF609FA4B23D6B8F6D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CookBookMVVM/Pods-CookBookMVVM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CookBookMVVM/Pods-CookBookMVVM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CookBookMVVM/Pods-CookBookMVVM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8480C41C26C2BFD800057641 /* Sources */ = {
@@ -279,6 +348,7 @@
 		};
 		8480C43526C2BFD800057641 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A90CDF9FC1FD8A386A60689 /* Pods-CookBookMVVM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -297,6 +367,7 @@
 		};
 		8480C43626C2BFD800057641 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA0FBA7F9CFDB174FD70EC02 /* Pods-CookBookMVVM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
