@@ -62,6 +62,9 @@ playground.xcworkspace
 Pods/
 Podfile.lock
 .DS_Store
+CookBookMVVM.xcworkspace/xcshareddata/
+CookBookMVVM.xcodeproj/project.xcworkspace/xcshareddata/
+CookBookMVVM.xcodeproj/xcuserdata/
 
 # Carthage
 #
