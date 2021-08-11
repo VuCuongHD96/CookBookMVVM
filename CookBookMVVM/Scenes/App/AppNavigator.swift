@@ -15,10 +15,8 @@ struct AppNavigator: AppNavigatorType {
     unowned let window: UIWindow
     
     func gotoCategoryScreen() {
-        let storyBoard = UIStoryboard(name: "Categories", bundle: nil)
-        guard let viewController = storyBoard.instantiateViewController(withIdentifier: "CategoriesViewController") as? CategoriesViewController else {
-            return
-        }
-        window.rootViewController = viewController
+        let viewController = CategoriesViewController.instantiate()
+        let navigation = UINavigationController(rootViewController: viewController)
+        window.rootViewController = navigation
     }
 }
