@@ -13,7 +13,7 @@ target 'CookBookMVVM' do
   pod 'SwiftLint'
   pod 'Reusable'
   pod 'Then'
-  pod 'Alamofire'
+  pod 'Alamofire'		
   pod 'ObjectMapper'
   pod 'SkeletonView'
 

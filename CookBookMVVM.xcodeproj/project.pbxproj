@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -46,7 +46,6 @@
 				9A90CDF9FC1FD8A386A60689 /* Pods-CookBookMVVM.debug.xcconfig */,
 				CA0FBA7F9CFDB174FD70EC02 /* Pods-CookBookMVVM.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -56,6 +55,77 @@
 				D3CD41241DD49B34802B4B52 /* Pods_CookBookMVVM.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		840CA9F226C2CF7E00F3E663 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8480C42326C2BFD800057641 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		840CA9F326C2CFDF00F3E663 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				840CA9F626C2CFF000F3E663 /* Model */,
+				840CA9F426C2CFE500F3E663 /* DataBase */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		840CA9F426C2CFE500F3E663 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		840CA9F626C2CFF000F3E663 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		840CA9F726C2D00100F3E663 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				840CA9F826C2D00D00F3E663 /* main */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		840CA9F826C2D00D00F3E663 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				8480C42926C2BFD800057641 /* Main.storyboard */,
+				8480C42E26C2BFD800057641 /* LaunchScreen.storyboard */,
+				8480C42726C2BFD800057641 /* ViewController.swift */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		840CA9F926C2D12D00F3E663 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		840CA9FA26C2D15300F3E663 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8480C42C26C2BFD800057641 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		840CA9FB26C2D17400F3E663 /* Extensions  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Extensions ";
 			sourceTree = "<group>";
 		};
 		8480C41726C2BFD800057641 = {
@@ -79,11 +149,12 @@
 		8480C42226C2BFD800057641 /* CookBookMVVM */ = {
 			isa = PBXGroup;
 			children = (
-				8480C42326C2BFD800057641 /* AppDelegate.swift */,
-				8480C42726C2BFD800057641 /* ViewController.swift */,
-				8480C42926C2BFD800057641 /* Main.storyboard */,
-				8480C42C26C2BFD800057641 /* Assets.xcassets */,
-				8480C42E26C2BFD800057641 /* LaunchScreen.storyboard */,
+				840CA9F226C2CF7E00F3E663 /* Application */,
+				840CA9F726C2D00100F3E663 /* Scenes */,
+				840CA9F326C2CFDF00F3E663 /* Data */,
+				840CA9FB26C2D17400F3E663 /* Extensions  */,
+				840CA9FA26C2D15300F3E663 /* Resources */,
+				840CA9F926C2D12D00F3E663 /* Utils */,
 				8480C43126C2BFD800057641 /* Info.plist */,
 			);
 			path = CookBookMVVM;
