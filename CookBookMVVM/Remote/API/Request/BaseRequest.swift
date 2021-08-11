@@ -23,8 +23,7 @@ class BaseRequest: NSObject {
         super.init()
         self.url = url
         self.requestType = requestType
-        var body = body ?? [:]
-        body["api_key"] = APIs.key
+        let body = body ?? [:]
         self.body = body
     }
     
