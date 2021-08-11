@@ -11,6 +11,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let storyBoard = UIStoryboard(name: "Categories", bundle: nil)
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: "CategoriesViewController") as? CategoriesViewController else {
+            return
+        }
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
