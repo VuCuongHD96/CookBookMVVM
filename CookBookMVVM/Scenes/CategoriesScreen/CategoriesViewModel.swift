@@ -50,7 +50,8 @@ class CategoriesViewModel: CategoriesViewModelType {
     
     // MARK: - Data
     func showData() {
-        useCase.getCategories { (listCategory) in
+        useCase.getCategories { [weak self] listCategory in
+            guard let self = self else { return }
             self.categoriesDatasource = CategoriesDatasource(categories: listCategory)
         }
     }
