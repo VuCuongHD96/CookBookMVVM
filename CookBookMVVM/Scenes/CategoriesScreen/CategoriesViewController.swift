@@ -22,23 +22,17 @@ final class CategoriesViewController: UIViewController {
             }
         }
     }
-    
-    private let castRepository = CategoriesRepositoryImpl(api: APIService.share)
-    
+        
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupData()
-
-        castRepository.getCategories { result in
-            switch result {
-            case .success(let categoriesReponse):
-                print(categoriesReponse?.categories as Any)
-            case .failure(let error):
-                print(error as Any)
-            }
-        }
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    @IBAction func searchAction(_ sender: Any) {
+        viewModel.buttonSearchDidTap = Void()
     }
 }
 
@@ -52,8 +46,9 @@ extension CategoriesViewController: ViewControllerType {
     
     // MARK: - Data
     func setupData() {
-        let categoriesNavigator = CategoriesNavigator(navigationController: navigationController!)
-        viewModel = CategoriesViewModel(navigator: categoriesNavigator)
+        let navigator = CategoriesNavigator(navigationController: navigationController!)
+        let useCase = CategoriesUseCase()
+        viewModel = CategoriesViewModel(navigator: navigator, useCase: useCase)
         viewModel.showData()
     }
 }

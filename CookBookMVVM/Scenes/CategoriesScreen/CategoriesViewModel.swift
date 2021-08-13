@@ -18,23 +18,41 @@ protocol CategoriesViewModelType {
     
     // MARK: - Data
     mutating func showData()
+    
+    // MARK: - Action
+    var buttonSearchDidTap: Void { get set }
 }
 
-struct CategoriesViewModel: CategoriesViewModelType {
+class CategoriesViewModel: CategoriesViewModelType {
 
     // MARK: - Property
-    var navigator: CategoriesNavigator
+    var navigator: CategoriesNavigatorType
+    var useCase: CategoriesUseCaseType
+    
     var dataDidChange: Listener?
-    var categories = Array(repeating: Category(), count: 10)
     var categoriesDatasource: CategoriesDatasource! {
         didSet {
             dataDidChange?(self)
         }
     }
     
+    // MARK: - Action
+    var buttonSearchDidTap: Void {
+        didSet {        
+            navigator.goto()
+        }
+    }
+    
+    init(navigator: CategoriesNavigator, useCase: CategoriesUseCaseType) {
+        self.navigator = navigator
+        self.useCase = useCase
+    }
+    
     // MARK: - Data
-    mutating func showData() {
-        categoriesDatasource = CategoriesDatasource(categories: categories)
-        navigator.goto()
+    func showData() {
+        useCase.getCategories { [weak self] listCategory in
+            guard let self = self else { return }
+            self.categoriesDatasource = CategoriesDatasource(categories: listCategory)
+        }
     }
 }

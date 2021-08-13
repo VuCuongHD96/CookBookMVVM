@@ -20,7 +20,11 @@ final class CategoriesDatasource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let row = indexPath.row
+        let category = categories[row]
+        
         let cell: CategoryTitleCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.setContent(category: category)
         return cell
     }
 }
