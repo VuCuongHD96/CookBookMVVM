@@ -7,9 +7,13 @@
 
 import UIKit
 import Reusable
+import SkeletonView
 
 final class CategoryTitleCell: UITableViewCell, NibReusable {
 
+    // MARK: - Outlet
+    @IBOutlet private weak var categoryLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
@@ -18,5 +22,12 @@ final class CategoryTitleCell: UITableViewCell, NibReusable {
     // MARK: - View
     private func setupView() {
         selectionStyle = .none
+        categoryLabel.showAnimatedGradientSkeleton()
+    }
+    
+    // MARK: - Data
+    func setContent(category: Category) {
+        categoryLabel.text = category.name
+        categoryLabel.hideSkeleton()
     }
 }

@@ -13,6 +13,7 @@
 		8418B4C626C56DC3001D6BB8 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418B4C526C56DC3001D6BB8 /* AppNavigator.swift */; };
 		8466152826C6760E000C9E77 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466152726C6760E000C9E77 /* Storyboard.swift */; };
 		8466152C26C67CC6000C9E77 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466152B26C67CC6000C9E77 /* UIView+.swift */; };
+		8466153226C6B48A000C9E77 /* CategoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466153126C6B48A000C9E77 /* CategoriesUseCase.swift */; };
 		8480C42426C2BFD800057641 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480C42326C2BFD800057641 /* AppDelegate.swift */; };
 		8480C42826C2BFD800057641 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480C42726C2BFD800057641 /* ViewController.swift */; };
 		8480C42B26C2BFD800057641 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8480C42926C2BFD800057641 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		8418B4C526C56DC3001D6BB8 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
 		8466152726C6760E000C9E77 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		8466152B26C67CC6000C9E77 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		8466153126C6B48A000C9E77 /* CategoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesUseCase.swift; sourceTree = "<group>"; };
 		8480C42026C2BFD800057641 /* CookBookMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookBookMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8480C42326C2BFD800057641 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8480C42726C2BFD800057641 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 		84C82B3526C41A37007BA959 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				84C82B4126C41A37007BA959 /* Repositories */,
 				84C82B3626C41A37007BA959 /* API */,
 			);
 			path = Remote;
@@ -257,7 +260,6 @@
 				84C82B3726C41A37007BA959 /* Middleware */,
 				84C82B3A26C41A37007BA959 /* Response */,
 				84C82B3C26C41A37007BA959 /* Utils */,
-				84C82B4126C41A37007BA959 /* Repositories */,
 				84C82B4226C41A37007BA959 /* Request */,
 				84C82B4426C41A37007BA959 /* Service */,
 				84C82B4626C41A37007BA959 /* Error */,
@@ -335,6 +337,7 @@
 				8498BB4026C42CF900128300 /* CategoriesViewModel.swift */,
 				8498BB4326C42DD900128300 /* CategoriesDatasource.swift */,
 				8418B4BE26C564C2001D6BB8 /* CategoriesNavigator.swift */,
+				8466153126C6B48A000C9E77 /* CategoriesUseCase.swift */,
 			);
 			path = CategoriesScreen;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				8498BB3026C428AF00128300 /* CategoriesResponse.swift in Sources */,
 				84C82B7A26C426F0007BA959 /* CategoriesViewController.swift in Sources */,
 				84C82B5026C41A37007BA959 /* Screen.swift in Sources */,
+				8466153226C6B48A000C9E77 /* CategoriesUseCase.swift in Sources */,
 				8466152826C6760E000C9E77 /* Storyboard.swift in Sources */,
 				8466152C26C67CC6000C9E77 /* UIView+.swift in Sources */,
 			);
