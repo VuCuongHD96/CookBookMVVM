@@ -11,7 +11,7 @@ import Reusable
 final class CategoriesViewController: UIViewController {
 
     // MARK: - Outlet
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     // MARK: - Property
     var viewModel: CategoriesViewModelType! {
@@ -48,7 +48,6 @@ extension CategoriesViewController: ViewControllerType {
     func setupView() {
         tableView.separatorStyle = .none
         tableView.register(cellType: CategoryTitleCell.self)
-//        CategoriesViewModel(
     }
     
     // MARK: - Data
