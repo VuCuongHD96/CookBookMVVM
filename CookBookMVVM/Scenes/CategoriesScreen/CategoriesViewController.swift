@@ -36,7 +36,7 @@ final class CategoriesViewController: UIViewController {
         viewModel.buttonSearchDidTap = Void()
     }
 }
-
+    
 extension CategoriesViewController: ViewControllerType {
     
     // MARK: - View
