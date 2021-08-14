@@ -14,7 +14,7 @@ protocol CategoriesViewModelType {
     
     // MARK: - Property
     var dataDidChange: Listener? { get set }
-    var categoriesDatasource: CategoriesDatasource! { get }
+    var categoriesDatasourceDelegate: CategoriesDatasourceDelegate! { get }
     
     // MARK: - Data
     mutating func showData()
@@ -23,14 +23,14 @@ protocol CategoriesViewModelType {
     var buttonSearchDidTap: Void { get set }
 }
 
-class CategoriesViewModel: CategoriesViewModelType {
+final class CategoriesViewModel: CategoriesViewModelType {
 
     // MARK: - Property
     var navigator: CategoriesNavigatorType
     var useCase: CategoriesUseCaseType
     
     var dataDidChange: Listener?
-    var categoriesDatasource: CategoriesDatasource! {
+    var categoriesDatasourceDelegate: CategoriesDatasourceDelegate! {
         didSet {
             dataDidChange?(self)
         }
@@ -39,7 +39,7 @@ class CategoriesViewModel: CategoriesViewModelType {
     // MARK: - Action
     var buttonSearchDidTap: Void {
         didSet {        
-            navigator.goto()
+            navigator.toSearchScreen()
         }
     }
     
@@ -52,7 +52,14 @@ class CategoriesViewModel: CategoriesViewModelType {
     func showData() {
         useCase.getCategories { [weak self] listCategory in
             guard let self = self else { return }
-            self.categoriesDatasource = CategoriesDatasource(categories: listCategory)
+            self.categoriesDatasourceDelegate = CategoriesDatasourceDelegate(categories: listCategory)
+            self.setupSelectAction()
+        }
+    }
+    
+    private func setupSelectAction() {
+        self.categoriesDatasourceDelegate.didChoiseData = { category in
+            self.navigator.toMealByCategoryScreen(catogory: category)
         }
     }
 }

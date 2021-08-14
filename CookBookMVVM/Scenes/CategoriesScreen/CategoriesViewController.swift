@@ -17,7 +17,8 @@ final class CategoriesViewController: UIViewController {
     var viewModel: CategoriesViewModelType! {
         didSet {
             viewModel.dataDidChange = { viewModel in
-                self.tableView.dataSource = viewModel.categoriesDatasource
+                self.tableView.dataSource = viewModel.categoriesDatasourceDelegate
+                self.tableView.delegate = viewModel.categoriesDatasourceDelegate
                 self.tableView.reloadData()
             }
         }
