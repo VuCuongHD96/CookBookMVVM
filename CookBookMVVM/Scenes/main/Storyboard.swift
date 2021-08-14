@@ -9,4 +9,6 @@ import UIKit
 
 struct Storyboard {
     static let categories = UIStoryboard(name: "Categories", bundle: nil)
+    static let search = UIStoryboard(name: "Search", bundle: nil)
+    static let mealByCategory = UIStoryboard(name: "MealByCategory", bundle: nil)
 }
