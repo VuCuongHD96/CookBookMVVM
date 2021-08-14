@@ -16,7 +16,7 @@ final class CategoriesViewController: UIViewController {
     // MARK: - Property
     var viewModel: CategoriesViewModelType! {
         didSet {
-            viewModel.dataDidChange = { viewModel in
+            viewModel.dataDidChange = { [unowned self] viewModel in
                 self.tableView.dataSource = viewModel.categoriesDatasourceDelegate
                 self.tableView.delegate = viewModel.categoriesDatasourceDelegate
                 self.tableView.reloadData()
