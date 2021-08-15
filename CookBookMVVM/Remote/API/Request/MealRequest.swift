@@ -13,4 +13,10 @@ final class MealRequest: BaseRequest {
         let url = URLs.mealByCategory + categoryName
         super.init(url: url, requestType: .get, body: body)
     }
+    
+    required init(id: String) {
+        let body: [String: Any] = [:]
+        let url = URLs.mealByID
+        super.init(url: url, requestType: .get, body: body)
+    }
 }

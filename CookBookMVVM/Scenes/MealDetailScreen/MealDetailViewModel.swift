@@ -14,6 +14,7 @@ protocol MealDetailViewModelType {
     
     // MARK: - Property
     var dataDidChange: Listener? { get set }
+    var mealDetailDataSourceDelegate: MealDetailDataSourceDelegate! { get }
     
     // MARK: - Data
     func showData()
@@ -28,16 +29,27 @@ final class MealDetailViewModel: MealDetailViewModelType {
     // MARK: - Property
     let navigator: MealDetailNavigatorType
     let useCase: MealDetailUseCaseType
+    var meal: Meal
     
     var dataDidChange: Listener?
+    var mealDetailDataSourceDelegate: MealDetailDataSourceDelegate! {
+        didSet {
+            dataDidChange?(self)
+        }
+    }
     
-    init(navigator: MealDetailNavigatorType, useCase: MealDetailUseCaseType) {
+    init(navigator: MealDetailNavigatorType, useCase: MealDetailUseCaseType, meal: Meal) {
         self.navigator = navigator
         self.useCase = useCase
+        self.meal = meal
     }
     
     // MARK: - Data
     func showData() {
+        useCase.getMeals(by: meal) { meal in
+            self.meal = meal
+            self.mealDetailDataSourceDelegate = MealDetailDataSourceDelegate()
+        }
         
     }
     
