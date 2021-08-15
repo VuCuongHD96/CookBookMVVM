@@ -11,7 +11,7 @@ final class MealByCategoryDatasouceDelegate: NSObject {
     
     // MARK: - Define
     struct Constant {
-        static let cellHeight: CGFloat = 170
+        static let cellHeight: CGFloat = 200
     }
     
     // MARK: - Property
@@ -24,11 +24,15 @@ final class MealByCategoryDatasouceDelegate: NSObject {
 
 extension MealByCategoryDatasouceDelegate: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return mealArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let row = indexPath.row
+        let meal = mealArray[row]
+
         let cell: MealCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.setContent(data: meal)
         return cell
     }
 }

@@ -8,9 +8,25 @@
 import Foundation
 
 protocol MealByCategoryUseCaseType {
-    
+    func getMeal(by category: Category, completionHandler: @escaping ([Meal]) -> Void)
 }
 
 struct MealByCategoryUseCase: MealByCategoryUseCaseType {
+    // MARK: - Property
+    private let mealsRepository = MealsRepositoryImpl(api: APIService.share)
     
+    // MARK: - Data
+    func getMeal(by category: Category, completionHandler: @escaping ([Meal]) -> Void) {
+        mealsRepository.getMeals(by: category) { result in
+            switch result {
+            case.success(let mealsResponse):
+                guard let mealArray = mealsResponse?.meals else {
+                    return
+                }
+                completionHandler(mealArray)
+            case .failure(let error):
+                print(error as Any)
+            }
+        }
+    }
 }
