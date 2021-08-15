@@ -9,7 +9,7 @@ import Foundation
 import ObjectMapper
 
 struct Category {
-    var id: String
+    var identifier: String
     var name: String
     var imageURL: String
     var description: String
@@ -17,7 +17,7 @@ struct Category {
 
 extension Category {
     init() {
-        id = ""
+        identifier = ""
         name = ""
         imageURL = ""
         description = ""
@@ -30,7 +30,7 @@ extension Category: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        id <- map["idCategory"]
+        identifier <- map["idCategory"]
         name <- map["strCategory"]
         imageURL <- map["strCategoryThumb"]
         description <- map["strCategoryDescription"]
