@@ -21,6 +21,7 @@ protocol MealByCategoryViewModelType {
     
     // MARK: - Action
     var buttonSearchDidTap: Void { get set }
+    var buttonBackDidTap: Void { get set }
 }
 
 final class MealByCategoryViewModel: MealByCategoryViewModelType {
@@ -48,12 +49,29 @@ final class MealByCategoryViewModel: MealByCategoryViewModelType {
     
     // MARK: - Data
     func showData() {
-        useCase.getMeal(by: category) { [unowned self] mealArray in
+        useCase.getMeals(by: category) { [unowned self] mealArray in
             self.mealArray = mealArray
-            self.mealByCategoryDatasouceDelegate = MealByCategoryDatasouceDelegate(mealArray: mealArray)
+            mealByCategoryDatasouceDelegate = MealByCategoryDatasouceDelegate(mealArray: mealArray)
+            setupSelectAction()
+        }
+    }
+    
+    private func setupSelectAction() {
+        mealByCategoryDatasouceDelegate.mealDidTap = { [unowned self] meal in
+            navigator.toMealDetailScreen(data: meal)
         }
     }
     
     // MARK: - Action
-    var buttonSearchDidTap: Void
+    var buttonBackDidTap: Void {
+        didSet {
+            navigator.toPreviousScreen()
+        }
+    }
+    
+    var buttonSearchDidTap: Void {
+        didSet {
+            navigator.toSearchScreen()
+        }
+    }
 }

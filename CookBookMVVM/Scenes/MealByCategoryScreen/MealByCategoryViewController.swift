@@ -22,7 +22,7 @@ final class MealByCategoryViewController: UIViewController {
     var viewModel: MealByCategoryViewModel! {
         didSet {
             viewModel.dataDidChange = { [unowned self] _ in
-                self.bindViewModel()
+                bindViewModel()
             }
         }
     }
@@ -57,6 +57,15 @@ final class MealByCategoryViewController: UIViewController {
         }
         categoryNameLabel.text = category.name
         numberOfRecipes.text = String(self.viewModel.mealArray.count) + " Recipes"
+    }
+    
+    // MARK: - Action
+    @IBAction func backAction(_ sender: Any) {
+        viewModel.buttonBackDidTap = Void()
+    }
+    
+    @IBAction func searchAction(_ sender: Any) {
+        viewModel.buttonSearchDidTap = Void()
     }
 }
 
