@@ -30,14 +30,14 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfU-q7-QPs">
-                                <rect key="frame" x="11" y="144.5" width="64.5" height="30.5"/>
+                                <rect key="frame" x="11" y="147" width="59" height="28"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tcQ-OR-4pK">
-                                    <rect key="frame" x="0.0" y="0.0" width="64.5" height="30.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="59" height="28"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5i-MK-yyN">
-                                            <rect key="frame" x="10" y="5" width="44.5" height="20.5"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                            <rect key="frame" x="10" y="5" width="39.5" height="18"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -49,7 +49,7 @@
                                         <constraint firstItem="w5i-MK-yyN" firstAttribute="top" secondItem="tcQ-OR-4pK" secondAttribute="top" constant="5" id="sMQ-3l-4Bo"/>
                                     </constraints>
                                 </view>
-                                <blurEffect style="regular"/>
+                                <blurEffect style="systemUltraThinMaterialDark"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
@@ -64,8 +64,8 @@
                             <constraint firstAttribute="trailing" secondItem="KEa-6T-mOL" secondAttribute="trailing" constant="16" id="Ajt-4i-v1G"/>
                             <constraint firstItem="hfU-q7-QPs" firstAttribute="leading" secondItem="KEa-6T-mOL" secondAttribute="leading" constant="-5" id="GZf-eP-fKn"/>
                             <constraint firstAttribute="bottom" secondItem="hfU-q7-QPs" secondAttribute="bottom" constant="5" id="SIe-C4-2o2"/>
+                            <constraint firstItem="hfU-q7-QPs" firstAttribute="width" relation="lessThanOrEqual" secondItem="KEa-6T-mOL" secondAttribute="width" id="T5O-NB-1R8"/>
                             <constraint firstItem="KEa-6T-mOL" firstAttribute="leading" secondItem="Zd6-eE-wnb" secondAttribute="leading" constant="16" id="fnW-AZ-Hoy"/>
-                            <constraint firstItem="hfU-q7-QPs" firstAttribute="width" relation="lessThanOrEqual" secondItem="KEa-6T-mOL" secondAttribute="width" id="ser-wL-SBy"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

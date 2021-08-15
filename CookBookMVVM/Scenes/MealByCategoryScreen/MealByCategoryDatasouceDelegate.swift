@@ -13,9 +13,11 @@ final class MealByCategoryDatasouceDelegate: NSObject {
     struct Constant {
         static let cellHeight: CGFloat = 200
     }
+    typealias PassData = (Meal) -> Void
     
     // MARK: - Property
     var mealArray = [Meal]()
+    var mealDidTap: PassData?
     
     init(mealArray: [Meal]) {
         self.mealArray = mealArray
@@ -40,5 +42,12 @@ extension MealByCategoryDatasouceDelegate: UITableViewDataSource {
 extension MealByCategoryDatasouceDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constant.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let meal = mealArray[row]
+        
+        mealDidTap?(meal)
     }
 }
