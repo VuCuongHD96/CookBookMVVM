@@ -33,7 +33,7 @@ struct MealByCategoryNavigator: MealByCategoryNavigatorType {
     func toMealDetailScreen(data: Meal) {
         let navigator = MealDetailNavigator(navigationController: navigationController)
         let useCase = MealDetailUseCase()
-        let viewModel = MealDetailViewModel(navigator: navigator, useCase: useCase)
+        let viewModel = MealDetailViewModel(navigator: navigator, useCase: useCase, meal: data)
         let viewController = MealDetailViewController.instantiate()
         viewController.viewModel = viewModel
         navigationController.pushViewController(viewController, animated: true)
