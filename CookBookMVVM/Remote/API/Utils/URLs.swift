@@ -7,5 +7,5 @@ struct URLs {
     static let categories = APIBaseUrl + "categories.php"
     static let meals = APIBaseUrl + "search.php?s"
     static let mealByCategory = APIBaseUrl + "filter.php?c="
-    static let mealByID = APIBaseUrl + "lookup.php?i=52772"
+    static let mealByID = APIBaseUrl + "lookup.php?i="
 }

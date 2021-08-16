@@ -10,6 +10,9 @@ import Reusable
 
 final class IngredientCell: UITableViewCell, NibReusable {
 
+    // MARK: - Outlet
+    @IBOutlet private weak var ingredientLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
@@ -18,5 +21,10 @@ final class IngredientCell: UITableViewCell, NibReusable {
     // MARK: - View
     private func setupView() {
         selectionStyle = .none
+    }
+    
+    // MARK: - Data
+    func setContent(data: FoodResource) {
+        ingredientLabel.text = "\(data.measure) \(data.ingredient)"
     }
 }

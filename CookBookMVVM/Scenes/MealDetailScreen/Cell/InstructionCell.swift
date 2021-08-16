@@ -10,6 +10,9 @@ import Reusable
 
 final class InstructionCell: UITableViewCell, NibReusable {
 
+    @IBOutlet private weak var instructionLabel: UILabel!
+    @IBOutlet private weak var numberLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
@@ -18,5 +21,11 @@ final class InstructionCell: UITableViewCell, NibReusable {
     // MARK: - View
     private func setupView() {
         selectionStyle = .none
+    }
+    
+    // MARK: - Data
+    func setupContent(data: String, index: Int) {
+        instructionLabel.text = data
+        numberLabel.text = String(index + 1)
     }
 }
