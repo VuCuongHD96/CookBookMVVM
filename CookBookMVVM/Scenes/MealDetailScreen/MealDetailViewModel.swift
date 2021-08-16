@@ -87,6 +87,7 @@ final class MealDetailViewModel: MealDetailViewModelType {
             navigator.toPreviousScreen()
         }
     }
+
     var buttonYoutubeDidTap: Void {
         didSet {
             navigator.toVideoScreen(with: meal)

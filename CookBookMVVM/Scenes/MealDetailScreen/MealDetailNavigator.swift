@@ -9,7 +9,7 @@ import UIKit
 
 protocol MealDetailNavigatorType {
     func toPreviousScreen()
-    func toVideoScreen(with meal: Meal) 
+    func toVideoScreen(with meal: Meal)
 }
 
 struct MealDetailNavigator: MealDetailNavigatorType {
