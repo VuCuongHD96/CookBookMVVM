@@ -20,4 +20,7 @@ function_body_length:
   error: 60
 line_length: 120
 
+identifier_name:
+    min_length: 2
+
 reporter: "xcode"

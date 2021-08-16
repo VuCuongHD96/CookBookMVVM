@@ -46,10 +46,35 @@ final class MealDetailViewModel: MealDetailViewModelType {
     
     // MARK: - Data
     func showData() {
-        useCase.getMeals(by: meal) { meal in
+        useCase.getMeals(by: meal) { [weak self] meal in
+            guard let self = self else { return }
             self.meal = meal
-            self.mealDetailDataSourceDelegate = MealDetailDataSourceDelegate()
+            self.setupTableViewData()
         }
+    }
+    
+    private func setupTableViewData() {
+        let listInstruction = createInstructions(from: meal)
+        let listIngredient = createListIngredient(from: meal)
+        mealDetailDataSourceDelegate = MealDetailDataSourceDelegate(listInstruction: listInstruction, listIngredient: listIngredient)
+    }
+    
+    private func createInstructions(from data: Meal) -> [String] {
+        let instructions = data.instructions
+        var deleteNewLine = instructions.replacingOccurrences(of: "\n", with: "")
+        deleteNewLine = deleteNewLine.replacingOccurrences(of: "\r", with: "")
+        let splitString = deleteNewLine.split(separator: ".")
+        var listInstruction = splitString.map {
+            $0.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+        listInstruction = listInstruction.filter {
+            $0.count > 1
+        }
+        return listInstruction
+    }
+    
+    private func createListIngredient(from data: Meal) -> [FoodResource] {
+        return data.resources
         
     }
     

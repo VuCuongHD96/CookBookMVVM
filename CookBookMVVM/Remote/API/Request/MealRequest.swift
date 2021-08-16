@@ -16,7 +16,7 @@ final class MealRequest: BaseRequest {
     
     required init(id: String) {
         let body: [String: Any] = [:]
-        let url = URLs.mealByID
+        let url = URLs.mealByID + id
         super.init(url: url, requestType: .get, body: body)
     }
 }

@@ -13,6 +13,15 @@ final class MealDetailDataSourceDelegate: NSObject {
     struct Constant {
         static let headerHeight: CGFloat = 30
     }
+    
+    // MARK: - Property
+    var listInstruction = [String]()
+    var listIngredient = [FoodResource]()
+    
+    init(listInstruction: [String], listIngredient: [FoodResource]) {
+        self.listInstruction = listInstruction
+        self.listIngredient = listIngredient
+    }
 }
 
 extension MealDetailDataSourceDelegate: UITableViewDataSource {
@@ -21,18 +30,30 @@ extension MealDetailDataSourceDelegate: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        switch section {
+        case 0:
+            return 5
+        case 1:
+            return listInstruction.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.section
+        let row = indexPath.row
         
         switch section {
         case 0:
+            let data = listIngredient[row]
             let cell: IngredientCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.setContent(data: data)
             return cell
         case 1:
+            let data = listInstruction[row]
             let cell: InstructionCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.setupContent(data: data, index: row)
             return cell
         default:
             return UITableViewCell()
