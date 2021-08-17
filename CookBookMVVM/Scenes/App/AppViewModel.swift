@@ -17,11 +17,11 @@ extension AppViewModel {
     }
 
     struct Output {
-        let toCategories: Void
+        let toTabbar: Void
     }
     
     func transform() -> Output {
-        let toCategories: Void = navigator.gotoCategoryScreen()
-        return Output(toCategories: toCategories)
+        let toTabbar: Void = navigator.gotoTabbarScreen()
+        return Output(toTabbar: toTabbar)
     }
 }
