@@ -30,7 +30,11 @@ extension HomeCategoryDatasourceDelegate: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let row = indexPath.row
+        let category = categoryArray[row]
+        
         let cell: CategoryImageCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.setContent(data: category)
         return cell
     }
 }

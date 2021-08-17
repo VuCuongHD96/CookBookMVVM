@@ -50,7 +50,7 @@ final class MealByCategoryViewController: UIViewController {
         categoryDataShowAnimation()
         let category = viewModel.category
         let urlString = category.imageURL
-        let url = URL(string: urlString)
+        guard let url = URL(string: urlString) else { return }
         categoryImageView.sd_setImage(with: url) { [weak self] (_, _, _, _) in
             guard let self = self else { return }
             self.categoryDataHideAnimation()

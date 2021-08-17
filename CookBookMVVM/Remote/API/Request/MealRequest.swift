@@ -19,4 +19,10 @@ final class MealRequest: BaseRequest {
         let url = URLs.mealByID + id
         super.init(url: url, requestType: .get, body: body)
     }
+    
+    required init() {
+        let body: [String: Any] = [:]
+        let url = URLs.allMeal
+        super.init(url: url, requestType: .get, body: body)
+    }
 }

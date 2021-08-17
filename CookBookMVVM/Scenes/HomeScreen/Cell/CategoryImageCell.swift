@@ -17,17 +17,18 @@ final class CategoryImageCell: UICollectionViewCell, NibReusable {
     // MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-//        setupView()
+        setupView()
     }
     
     // MARK: - View
     private func setupView() {
+        categoryImageView.isSkeletonable = true
         categoryImageView.showAnimatedGradientSkeleton()
     }
 
     // MARK: - Data
     func setContent(data: Category) {
-        let url = URL(string: data.imageURL)
+        guard let url = URL(string: data.imageURL) else { return }
         categoryImageView.sd_setImage(with: url) { [weak self] (_, _, _, _) in
             guard let self = self else { return }
             self.categoryImageView.hideSkeleton()

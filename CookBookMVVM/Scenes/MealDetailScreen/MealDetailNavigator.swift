@@ -8,10 +8,14 @@
 import UIKit
 
 protocol MealDetailNavigatorType {
-    
+    func toPreviousScreen()
 }
 
 struct MealDetailNavigator: MealDetailNavigatorType {
     
     unowned let navigationController: UINavigationController
+    
+    func toPreviousScreen() {
+        navigationController.popViewController(animated: true)
+    }
 }

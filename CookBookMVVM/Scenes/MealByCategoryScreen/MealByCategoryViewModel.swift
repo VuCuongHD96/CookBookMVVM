@@ -37,7 +37,7 @@ final class MealByCategoryViewModel: MealByCategoryViewModelType {
             dataDidChange?(self)
         }
     }
-    var mealArray = [Meal]()
+    var mealArray = Array(repeating: Meal(), count: 5)
     
     init(navigator: MealByCategoryNavigatorType,
          useCase: MealByCategoryUseCaseType,
@@ -49,6 +49,7 @@ final class MealByCategoryViewModel: MealByCategoryViewModelType {
     
     // MARK: - Data
     func showData() {
+        mealByCategoryDatasouceDelegate = MealByCategoryDatasouceDelegate(mealArray: mealArray)
         useCase.getMeals(by: category) { [unowned self] mealArray in
             self.mealArray = mealArray
             mealByCategoryDatasouceDelegate = MealByCategoryDatasouceDelegate(mealArray: mealArray)
