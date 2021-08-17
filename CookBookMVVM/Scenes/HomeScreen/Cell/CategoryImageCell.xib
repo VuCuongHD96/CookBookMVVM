@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoryImageCell" customModule="CookBookMVVM" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="387" height="211"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="387" height="211"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meal" translatesAutoresizingMaskIntoConstraints="NO" id="jRf-M9-KsA">
+                        <rect key="frame" x="0.0" y="0.0" width="387" height="211"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="jRf-M9-KsA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9oA-3w-lmT"/>
+                <constraint firstItem="jRf-M9-KsA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="RdF-YO-93f"/>
+                <constraint firstAttribute="trailing" secondItem="jRf-M9-KsA" secondAttribute="trailing" id="TR1-Ll-CB1"/>
+                <constraint firstAttribute="bottom" secondItem="jRf-M9-KsA" secondAttribute="bottom" id="xSz-R5-ulC"/>
+            </constraints>
+            <size key="customSize" width="387" height="211"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="categoryImageView" destination="jRf-M9-KsA" id="Ppy-C3-mEN"/>
+            </connections>
+            <point key="canvasLocation" x="368.84057971014494" y="133.59375"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="meal" width="344" height="128"/>
+    </resources>
+</document>

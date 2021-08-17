@@ -42,6 +42,7 @@ extension MealTabBarController: ViewControllerType {
         guard let navigationController = navigationController else {
             return
         }
+        navigationController.isNavigationBarHidden = true
         let navigator = MealTabbarNavigator(navigationController: navigationController)
         viewModel = MealTabBarViewModel(navigator: navigator)
         viewModel.showData()
