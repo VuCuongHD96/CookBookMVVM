@@ -48,16 +48,20 @@ final class MealDetailViewController: UIViewController {
     }
     
     private func setupMealData() {
-        showAnimationMealData()
         let meal = viewModel.meal
-        categoryNameLabel.text = meal.category
-        mealNameLabel.text = meal.name
         let urlString = meal.imageString
-        let url = URL(string: urlString)
+        guard let url = URL(string: urlString) else { return }
         mealImageView.sd_setImage(with: url) { [weak self] (_, _, _, _) in
             guard let self = self else { return }
+            self.categoryNameLabel.text = meal.category
+            self.mealNameLabel.text = meal.name
             self.hideAnimationMealData()
         }
+    }
+    
+    // MARK: - Action
+    @IBAction func backAction(_ sender: Any) {
+        viewModel.buttonBackDidTap = Void()
     }
 }
 
@@ -71,6 +75,7 @@ extension MealDetailViewController: ViewControllerType {
             $0.register(cellType: HeaderCell.self)
             $0.separatorStyle = .none
         }
+        showAnimationMealData()
     }
     
     private func showAnimationMealData() {

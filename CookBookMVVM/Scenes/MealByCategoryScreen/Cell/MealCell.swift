@@ -22,18 +22,17 @@ final class MealCell: UITableViewCell, NibReusable {
     override func prepareForReuse() {
         super.prepareForReuse()
         mealImageView.image = nil
-        mealNameLabel.text = nil
     }
     
     // MARK: - View
     private func setupView() {
         selectionStyle = .none
+        mealImageView.showAnimatedGradientSkeleton()
     }
     
     func setContent(data: Meal) {
-        mealImageView.showGradientSkeleton()
         let urlString = data.imageString
-        let url = URL(string: urlString)
+        guard let url = URL(string: urlString) else { return }
         mealImageView.sd_setImage(with: url) { [weak self] (_, _, _, _) in
             guard let self = self else { return }
             self.mealImageView.hideSkeleton()

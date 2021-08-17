@@ -48,6 +48,9 @@
                                                                     <constraint firstAttribute="width" secondItem="2jK-yN-vCn" secondAttribute="height" id="Eh1-Fg-02K"/>
                                                                 </constraints>
                                                                 <state key="normal" image="backwhite"/>
+                                                                <connections>
+                                                                    <action selector="backAction:" destination="kuF-Lz-hYc" eventType="touchUpInside" id="hDA-ly-x1v"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>

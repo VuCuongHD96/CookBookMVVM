@@ -17,10 +17,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="387" height="211"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meal" translatesAutoresizingMaskIntoConstraints="NO" id="jRf-M9-KsA">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jRf-M9-KsA">
                         <rect key="frame" x="0.0" y="0.0" width="387" height="211"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
                 </subviews>
@@ -44,7 +47,4 @@
             <point key="canvasLocation" x="368.84057971014494" y="133.59375"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="meal" width="344" height="128"/>
-    </resources>
 </document>

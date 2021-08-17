@@ -35,6 +35,7 @@ final class CategoriesViewModel: CategoriesViewModelType {
             dataDidChange?(self)
         }
     }
+    let listCategory = Array(repeating: Category(), count: 20)
     
     // MARK: - Action
     var buttonSearchDidTap: Void {
@@ -50,6 +51,7 @@ final class CategoriesViewModel: CategoriesViewModelType {
     
     // MARK: - Data
     func showData() {
+        categoriesDatasourceDelegate = CategoriesDatasourceDelegate(categories: listCategory)
         useCase.getCategories { [weak self] listCategory in
             guard let self = self else { return }
             self.categoriesDatasourceDelegate = CategoriesDatasourceDelegate(categories: listCategory)

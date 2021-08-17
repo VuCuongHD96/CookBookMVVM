@@ -53,7 +53,16 @@ final class HomeViewModel: HomeViewModelType {
     // MARK: - Data
     func showData() {
         homeCategoryDatasourceDelegate = HomeCategoryDatasourceDelegate(categoryArray: categoryArray)
+        useCase.getAllCategory { [weak self] (categoryArray) in
+            guard let self = self else { return }
+            self.homeCategoryDatasourceDelegate = HomeCategoryDatasourceDelegate(categoryArray: categoryArray)
+        }
+        
         homeMealDatasourceDelegate = HomeMealDatasourceDelegate(mealArray: mealArray)
+        useCase.getAllMeal { [weak self] (mealArray) in
+            guard let self = self else { return }
+            self.homeMealDatasourceDelegate = HomeMealDatasourceDelegate(mealArray: mealArray)
+        }
     }
     
     // MARK: - Action

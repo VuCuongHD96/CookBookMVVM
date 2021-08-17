@@ -56,7 +56,8 @@ final class MealDetailViewModel: MealDetailViewModelType {
     private func setupTableViewData() {
         let listInstruction = createInstructions(from: meal)
         let listIngredient = createListIngredient(from: meal)
-        mealDetailDataSourceDelegate = MealDetailDataSourceDelegate(listInstruction: listInstruction, listIngredient: listIngredient)
+        mealDetailDataSourceDelegate = MealDetailDataSourceDelegate(listInstruction: listInstruction,
+                                                                    listIngredient: listIngredient)
     }
     
     private func createInstructions(from data: Meal) -> [String] {
@@ -80,5 +81,9 @@ final class MealDetailViewModel: MealDetailViewModelType {
     
     // MARK: - Action
     var buttonFavoriteDidTap: Void
-    var buttonBackDidTap: Void
+    var buttonBackDidTap: Void {
+        didSet {
+            navigator.toPreviousScreen()
+        }
+    }
 }

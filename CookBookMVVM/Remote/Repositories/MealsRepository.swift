@@ -51,4 +51,20 @@ final class MealsRepositoryImpl: MealsRepository {
             completion(.success(object))
         }
     }
+    
+    func getAllMeal(completion: @escaping (BaseResult<MealResponse>) -> Void) {
+        let input = MealRequest()
+        guard let api = api else {
+            return
+        }
+        api.request(input: input) { (object: MealResponse?, error) in
+            guard let object = object else {
+                guard let error = error else {
+                    return completion(.failure(error: nil))
+                }
+                return completion(.failure(error: error))
+            }
+            completion(.success(object))
+        }
+    }
 }
