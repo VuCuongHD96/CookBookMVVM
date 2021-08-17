@@ -8,14 +8,14 @@
 import UIKit
 
 protocol AppNavigatorType {
-    func gotoCategoryScreen()
+    func gotoTabbarScreen()
 }
 
 struct AppNavigator: AppNavigatorType {
     unowned let window: UIWindow
     
-    func gotoCategoryScreen() {
-        let viewController = CategoriesViewController.instantiate()
+    func gotoTabbarScreen() {
+        let viewController = MealTabBarController.instantiate()
         let navigation = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigation
     }

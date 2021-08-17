@@ -17,16 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         bindViewModel()
         return true
     }
-    
-    private func gotoMainScreen() {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = storyBoard.instantiateViewController(withIdentifier: "vc") as? ViewController else {
-            return
-        }
-        let navigation = UINavigationController(rootViewController: vc)
-        window?.rootViewController = navigation
-    }
-    
+     
     private func bindViewModel() {
         guard let window = window else {
             return
@@ -35,6 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewModel = AppViewModel(navigator: navigator)
 
         let output = viewModel.transform()
-        output.toCategories
+        output.toTabbar
     }
 }

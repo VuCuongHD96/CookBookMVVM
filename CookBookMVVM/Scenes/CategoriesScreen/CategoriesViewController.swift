@@ -47,9 +47,6 @@ extension CategoriesViewController: ViewControllerType {
     
     // MARK: - Data
     func setupData() {
-        let navigator = CategoriesNavigator(navigationController: navigationController!)
-        let useCase = CategoriesUseCase()
-        viewModel = CategoriesViewModel(navigator: navigator, useCase: useCase)
         viewModel.showData()
     }
 }
