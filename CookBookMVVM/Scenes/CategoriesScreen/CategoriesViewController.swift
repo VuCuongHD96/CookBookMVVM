@@ -29,9 +29,9 @@ final class CategoriesViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupData()
-        navigationController?.isNavigationBarHidden = true
     }
     
+    // MARK: - Action
     @IBAction func searchAction(_ sender: Any) {
         viewModel.buttonSearchDidTap = Void()
     }

@@ -59,6 +59,13 @@
 		84A1CDE226C8C0F6003D7728 /* MealRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1CDE126C8C0F6003D7728 /* MealRequest.swift */; };
 		84A1CDE726C8C18F003D7728 /* MealResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1CDE626C8C18F003D7728 /* MealResponse.swift */; };
 		84A1CDEA26C8C1C5003D7728 /* MealsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1CDE926C8C1C5003D7728 /* MealsRepository.swift */; };
+		84C16B9F26CBE382009B45FD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C16B9E26CBE382009B45FD /* HomeViewModel.swift */; };
+		84C16BAD26CBE419009B45FD /* HomeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C16BAC26CBE419009B45FD /* HomeNavigator.swift */; };
+		84C16BB026CBE44E009B45FD /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C16BAF26CBE44E009B45FD /* HomeUseCase.swift */; };
+		84C16BB326CBE6D0009B45FD /* HomeCategoryDatasourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C16BB226CBE6D0009B45FD /* HomeCategoryDatasourceDelegate.swift */; };
+		84C16BBB26CBEF3A009B45FD /* CategoryImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C16BB926CBEF3A009B45FD /* CategoryImageCell.swift */; };
+		84C16BBC26CBEF3A009B45FD /* CategoryImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C16BBA26CBEF3A009B45FD /* CategoryImageCell.xib */; };
+		84C16BBF26CBF489009B45FD /* HomeMealDatasourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C16BBE26CBF489009B45FD /* HomeMealDatasourceDelegate.swift */; };
 		84C82B4D26C41A37007BA959 /* CustomRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C82B3826C41A37007BA959 /* CustomRequestAdapter.swift */; };
 		84C82B4E26C41A37007BA959 /* BaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C82B3926C41A37007BA959 /* BaseResult.swift */; };
 		84C82B4F26C41A37007BA959 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C82B3B26C41A37007BA959 /* HTTPStatusCode.swift */; };
@@ -132,6 +139,13 @@
 		84A1CDE126C8C0F6003D7728 /* MealRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRequest.swift; sourceTree = "<group>"; };
 		84A1CDE626C8C18F003D7728 /* MealResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealResponse.swift; sourceTree = "<group>"; };
 		84A1CDE926C8C1C5003D7728 /* MealsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsRepository.swift; sourceTree = "<group>"; };
+		84C16B9E26CBE382009B45FD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		84C16BAC26CBE419009B45FD /* HomeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigator.swift; sourceTree = "<group>"; };
+		84C16BAF26CBE44E009B45FD /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
+		84C16BB226CBE6D0009B45FD /* HomeCategoryDatasourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryDatasourceDelegate.swift; sourceTree = "<group>"; };
+		84C16BB926CBEF3A009B45FD /* CategoryImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryImageCell.swift; sourceTree = "<group>"; };
+		84C16BBA26CBEF3A009B45FD /* CategoryImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryImageCell.xib; sourceTree = "<group>"; };
+		84C16BBE26CBF489009B45FD /* HomeMealDatasourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMealDatasourceDelegate.swift; sourceTree = "<group>"; };
 		84C82B3826C41A37007BA959 /* CustomRequestAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRequestAdapter.swift; sourceTree = "<group>"; };
 		84C82B3926C41A37007BA959 /* BaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResult.swift; sourceTree = "<group>"; };
 		84C82B3B26C41A37007BA959 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
@@ -381,6 +395,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		84C16BB826CBEF11009B45FD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84C16BB926CBEF3A009B45FD /* CategoryImageCell.swift */,
+				84C16BBA26CBEF3A009B45FD /* CategoryImageCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		84C82B3526C41A37007BA959 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,8 +507,14 @@
 		84EDBF4426CA9C6E0006CB4A /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				84C16BB826CBEF11009B45FD /* Cell */,
 				84EDBF4526CA9C810006CB4A /* Home.storyboard */,
 				84EDBF4826CA9D2C0006CB4A /* HomeViewController.swift */,
+				84C16B9E26CBE382009B45FD /* HomeViewModel.swift */,
+				84C16BAC26CBE419009B45FD /* HomeNavigator.swift */,
+				84C16BAF26CBE44E009B45FD /* HomeUseCase.swift */,
+				84C16BB226CBE6D0009B45FD /* HomeCategoryDatasourceDelegate.swift */,
+				84C16BBE26CBF489009B45FD /* HomeMealDatasourceDelegate.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -564,6 +593,7 @@
 				84C82B7926C426F0007BA959 /* Categories.storyboard in Resources */,
 				8483C07F26C7761500A0794A /* Search.storyboard in Resources */,
 				8480C42B26C2BFD800057641 /* Main.storyboard in Resources */,
+				84C16BBC26CBEF3A009B45FD /* CategoryImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +672,7 @@
 				84EDBF5026CAAC2E0006CB4A /* MealTabbarNavigator.swift in Sources */,
 				842B91AA26C90DA7005CB0D1 /* MealDetailUseCase.swift in Sources */,
 				84EDBF4D26CAA9CA0006CB4A /* MealTabBarViewModel.swift in Sources */,
+				84C16BB326CBE6D0009B45FD /* HomeCategoryDatasourceDelegate.swift in Sources */,
 				8483C08226C7763E00A0794A /* SearchViewController.swift in Sources */,
 				8498BB3D26C42C2200128300 /* CategoryTitleCell.swift in Sources */,
 				842B91BA26C925DC005CB0D1 /* MealDetailDataSourceDelegate.swift in Sources */,
@@ -649,12 +680,14 @@
 				84C82B4F26C41A37007BA959 /* HTTPStatusCode.swift in Sources */,
 				8498BB4426C42DD900128300 /* CategoriesDatasourceDelegate.swift in Sources */,
 				84C82B5326C41A37007BA959 /* URLs.swift in Sources */,
+				84C16BBB26CBEF3A009B45FD /* CategoryImageCell.swift in Sources */,
 				844387C726C8021000C678CA /* MealCell.swift in Sources */,
 				84C82B5626C41A37007BA959 /* ErrorResponse.swift in Sources */,
 				84C82B5526C41A37007BA959 /* APIService.swift in Sources */,
 				8483C09C26C780E000A0794A /* MealByCategoryUseCase.swift in Sources */,
 				842B91A426C90C61005CB0D1 /* MealDetailViewModel.swift in Sources */,
 				8498BB2826C4284500128300 /* CategoriesRepository.swift in Sources */,
+				84C16BB026CBE44E009B45FD /* HomeUseCase.swift in Sources */,
 				8418B4C326C56D92001D6BB8 /* AppViewModel.swift in Sources */,
 				84A1CDEA26C8C1C5003D7728 /* MealsRepository.swift in Sources */,
 				842B91B626C91FD7005CB0D1 /* InstructionCell.swift in Sources */,
@@ -664,12 +697,14 @@
 				84C82B5726C41A37007BA959 /* BaseError.swift in Sources */,
 				8483C09926C7807A00A0794A /* MealByCategoryNavigator.swift in Sources */,
 				8418B4C626C56DC3001D6BB8 /* AppNavigator.swift in Sources */,
+				84C16BAD26CBE419009B45FD /* HomeNavigator.swift in Sources */,
 				842B91B126C91F9A005CB0D1 /* IngredientCell.swift in Sources */,
 				8498BB4126C42CF900128300 /* CategoriesViewModel.swift in Sources */,
 				844387D226C8101D00C678CA /* FoodResouce.swift in Sources */,
 				841E835726CBC0FE006CE9D7 /* FavoriteViewController.swift in Sources */,
 				842B91A126C90BAD005CB0D1 /* MealDetailViewController.swift in Sources */,
 				84C82B4E26C41A37007BA959 /* BaseResult.swift in Sources */,
+				84C16B9F26CBE382009B45FD /* HomeViewModel.swift in Sources */,
 				8418B4BF26C564C2001D6BB8 /* CategoriesNavigator.swift in Sources */,
 				84C82B4D26C41A37007BA959 /* CustomRequestAdapter.swift in Sources */,
 				8480C42426C2BFD800057641 /* AppDelegate.swift in Sources */,
@@ -685,6 +720,7 @@
 				8466152826C6760E000C9E77 /* Storyboard.swift in Sources */,
 				8466152C26C67CC6000C9E77 /* UIView+.swift in Sources */,
 				8483C09326C77C0A00A0794A /* MealByCategoryViewController.swift in Sources */,
+				84C16BBF26CBF489009B45FD /* HomeMealDatasourceDelegate.swift in Sources */,
 				842B91BE26C92F25005CB0D1 /* HeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -841,6 +877,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CuongIOS.CookBookMVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = off;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -860,6 +897,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CuongIOS.CookBookMVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = off;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
