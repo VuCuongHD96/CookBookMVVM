@@ -32,7 +32,7 @@ extension MealDetailDataSourceDelegate: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 5
+            return listIngredient.count
         case 1:
             return listInstruction.count
         default:

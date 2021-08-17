@@ -20,11 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func gotoMainScreen() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = storyBoard.instantiateViewController(withIdentifier: "vc") as? ViewController else {
-            return
-        }
-        let navigation = UINavigationController(rootViewController: vc)
-        window?.rootViewController = navigation
+//        guard let vc = storyBoard.instantiateViewController(withIdentifier: "vc") as? ViewController else {
+//            return
+//        }
+//        let navigation = UINavigationController(rootViewController: vc)
+//        window?.rootViewController = navigation
     }
     
     private func bindViewModel() {

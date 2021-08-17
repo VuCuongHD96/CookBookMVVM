@@ -15,7 +15,7 @@ struct AppNavigator: AppNavigatorType {
     unowned let window: UIWindow
     
     func gotoCategoryScreen() {
-        let viewController = CategoriesViewController.instantiate()
+        let viewController = MealTabBarController.instantiate()
         let navigation = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigation
     }
