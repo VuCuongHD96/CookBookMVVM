@@ -52,19 +52,46 @@ final class HomeViewModel: HomeViewModelType {
     
     // MARK: - Data
     func showData() {
+        setupCategoryData()
+        setupMealData()
+    }
+    
+    private func setupCategoryData() {
         homeCategoryDatasourceDelegate = HomeCategoryDatasourceDelegate(categoryArray: categoryArray)
         useCase.getAllCategory { [weak self] (categoryArray) in
             guard let self = self else { return }
             self.homeCategoryDatasourceDelegate = HomeCategoryDatasourceDelegate(categoryArray: categoryArray)
+            self.setupCategoryAction()
         }
-        
+    }
+    
+    private func setupMealData() {
         homeMealDatasourceDelegate = HomeMealDatasourceDelegate(mealArray: mealArray)
         useCase.getAllMeal { [weak self] (mealArray) in
             guard let self = self else { return }
             self.homeMealDatasourceDelegate = HomeMealDatasourceDelegate(mealArray: mealArray)
+            self.setupMealAction()
         }
     }
     
     // MARK: - Action
-    var buttonSearchDidTap: Void
+    private func setupCategoryAction() {
+        homeCategoryDatasourceDelegate.didSelectCategory = { [weak self] category in
+            guard let self = self else { return }
+            self.navigator.toMealByCategoryScreen(catogory: category)
+        }
+    }
+    
+    private func setupMealAction() {
+        homeMealDatasourceDelegate.didSelectedMeal = { [weak self] meal in
+            guard let self = self else { return }
+            self.navigator.toMealDetailScreen(data: meal)
+        }
+    }
+    
+    var buttonSearchDidTap: Void {
+        didSet {
+            navigator.toSearchScreen()
+        }
+    }
 }

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3r3-um-3lp">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="680"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="pd0-0N-wfM">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="234"/>
@@ -74,14 +74,47 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7pG-ot-N1q" userLabel="Navigation View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FLAVR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2P-jM-YVd">
+                                        <rect key="frame" x="182" y="17.666666666666668" width="50.333333333333343" height="21.000000000000004"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsL-4v-0vw">
+                                        <rect key="frame" x="362" y="10" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="zsL-4v-0vw" secondAttribute="height" id="dQG-wm-qDe"/>
+                                        </constraints>
+                                        <state key="normal" image="iconSearch"/>
+                                        <connections>
+                                            <action selector="searchAction:" destination="cnJ-g7-oiC" eventType="touchUpInside" id="ZOC-xX-CRO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="P2P-jM-YVd" firstAttribute="centerX" secondItem="7pG-ot-N1q" secondAttribute="centerX" id="1pc-gr-GP9"/>
+                                    <constraint firstItem="zsL-4v-0vw" firstAttribute="top" secondItem="7pG-ot-N1q" secondAttribute="top" constant="10" id="G3j-pR-a3s"/>
+                                    <constraint firstAttribute="bottom" secondItem="zsL-4v-0vw" secondAttribute="bottom" constant="10" id="NRM-KG-ifX"/>
+                                    <constraint firstAttribute="height" constant="56" id="fMj-j4-0F0"/>
+                                    <constraint firstAttribute="trailing" secondItem="zsL-4v-0vw" secondAttribute="trailing" constant="16" id="jnv-xm-EDZ"/>
+                                    <constraint firstItem="P2P-jM-YVd" firstAttribute="centerY" secondItem="zsL-4v-0vw" secondAttribute="centerY" id="wuf-Mn-S1h"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iLO-4Q-sMp"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
+                            <constraint firstItem="iLO-4Q-sMp" firstAttribute="trailing" secondItem="7pG-ot-N1q" secondAttribute="trailing" id="ARb-iJ-LFr"/>
                             <constraint firstItem="iLO-4Q-sMp" firstAttribute="bottom" secondItem="3r3-um-3lp" secondAttribute="bottom" id="BMk-1P-0z2"/>
-                            <constraint firstItem="3r3-um-3lp" firstAttribute="top" secondItem="iLO-4Q-sMp" secondAttribute="top" constant="20" id="IIL-w7-upg"/>
+                            <constraint firstItem="3r3-um-3lp" firstAttribute="top" secondItem="7pG-ot-N1q" secondAttribute="bottom" id="DWw-H8-xJI"/>
                             <constraint firstItem="iLO-4Q-sMp" firstAttribute="trailing" secondItem="3r3-um-3lp" secondAttribute="trailing" id="XkY-Q8-Zr7"/>
+                            <constraint firstItem="7pG-ot-N1q" firstAttribute="top" secondItem="iLO-4Q-sMp" secondAttribute="top" id="xYz-eF-Jo1"/>
                             <constraint firstItem="3r3-um-3lp" firstAttribute="leading" secondItem="iLO-4Q-sMp" secondAttribute="leading" id="yyD-4k-ICh"/>
+                            <constraint firstItem="7pG-ot-N1q" firstAttribute="leading" secondItem="V0i-JB-Kuy" secondAttribute="leading" id="zTh-NH-HRq"/>
                         </constraints>
                     </view>
                     <connections>
@@ -95,6 +128,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="iconSearch" width="18" height="18"/>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

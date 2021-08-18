@@ -45,6 +45,11 @@ final class HomeViewController: UIViewController {
             $0.reloadData()
         }
     }
+    
+    // MARK: - Action
+    @IBAction func searchAction(_ sender: Any) {
+        viewModel.buttonSearchDidTap = Void()
+    }
 }
 
 extension HomeViewController: ViewControllerType {

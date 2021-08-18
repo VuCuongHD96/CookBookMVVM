@@ -41,7 +41,7 @@ struct MealTabbarNavigator: MealTabbarNavigatorType {
     }
     
     func createHomeScreen() -> UIViewController {
-        let navigator = HomeNavigator(navigation: navigationController)
+        let navigator = HomeNavigator(navigationController: navigationController)
         let useCase = HomeUseCase()
         let viewModel = HomeViewModel(navigator: navigator, useCase: useCase)
         let viewController = HomeViewController.instantiate()
