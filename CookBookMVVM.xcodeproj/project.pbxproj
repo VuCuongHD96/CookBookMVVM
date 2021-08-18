@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84169D9526CD50990028FB66 /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84169D9426CD50990028FB66 /* Video.storyboard */; };
+		84169D9826CD50BA0028FB66 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84169D9726CD50BA0028FB66 /* VideoViewController.swift */; };
 		8418B4BB26C55CBA001D6BB8 /* ViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418B4BA26C55CBA001D6BB8 /* ViewControllerType.swift */; };
 		8418B4BF26C564C2001D6BB8 /* CategoriesNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418B4BE26C564C2001D6BB8 /* CategoriesNavigator.swift */; };
 		8418B4C326C56D92001D6BB8 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418B4C226C56D92001D6BB8 /* AppViewModel.swift */; };
@@ -77,6 +79,9 @@
 		84C82B5726C41A37007BA959 /* BaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C82B4826C41A37007BA959 /* BaseError.swift */; };
 		84C82B7926C426F0007BA959 /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C82B7726C426F0007BA959 /* Categories.storyboard */; };
 		84C82B7A26C426F0007BA959 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C82B7826C426F0007BA959 /* CategoriesViewController.swift */; };
+		84DC065B26CEA52700A8BC86 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC065A26CEA52700A8BC86 /* VideoViewModel.swift */; };
+		84DC065D26CEA58800A8BC86 /* VideoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC065C26CEA58800A8BC86 /* VideoNavigator.swift */; };
+		84DC065F26CEA73D00A8BC86 /* VideoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC065E26CEA73D00A8BC86 /* VideoDelegate.swift */; };
 		84EDBF4626CA9C810006CB4A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EDBF4526CA9C810006CB4A /* Home.storyboard */; };
 		84EDBF4926CA9D2C0006CB4A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDBF4826CA9D2C0006CB4A /* HomeViewController.swift */; };
 		84EDBF4D26CAA9CA0006CB4A /* MealTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDBF4C26CAA9CA0006CB4A /* MealTabBarViewModel.swift */; };
@@ -84,7 +89,22 @@
 		A2DFDFE304BB3D540901028A /* Pods_CookBookMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3CD41241DD49B34802B4B52 /* Pods_CookBookMVVM.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		84169DBD26CD5B640028FB66 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		84169D9426CD50990028FB66 /* Video.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Video.storyboard; sourceTree = "<group>"; };
+		84169D9726CD50BA0028FB66 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		8418B4BA26C55CBA001D6BB8 /* ViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerType.swift; sourceTree = "<group>"; };
 		8418B4BE26C564C2001D6BB8 /* CategoriesNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesNavigator.swift; sourceTree = "<group>"; };
 		8418B4C226C56D92001D6BB8 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
@@ -157,6 +177,9 @@
 		84C82B4826C41A37007BA959 /* BaseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseError.swift; sourceTree = "<group>"; };
 		84C82B7726C426F0007BA959 /* Categories.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
 		84C82B7826C426F0007BA959 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		84DC065A26CEA52700A8BC86 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
+		84DC065C26CEA58800A8BC86 /* VideoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoNavigator.swift; sourceTree = "<group>"; };
+		84DC065E26CEA73D00A8BC86 /* VideoDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDelegate.swift; sourceTree = "<group>"; };
 		84EDBF4526CA9C810006CB4A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		84EDBF4826CA9D2C0006CB4A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84EDBF4C26CAA9CA0006CB4A /* MealTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTabBarViewModel.swift; sourceTree = "<group>"; };
@@ -221,6 +244,7 @@
 				8483C07D26C775F300A0794A /* SearchScreen */,
 				8483C08D26C77A4800A0794A /* MealByCategoryScreen */,
 				842B919A26C90194005CB0D1 /* MealDetailScreen */,
+				84169D9326CD50360028FB66 /* VideoScreen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -260,6 +284,18 @@
 				8466152B26C67CC6000C9E77 /* UIView+.swift */,
 			);
 			path = "Extensions ";
+			sourceTree = "<group>";
+		};
+		84169D9326CD50360028FB66 /* VideoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84169D9426CD50990028FB66 /* Video.storyboard */,
+				84169D9726CD50BA0028FB66 /* VideoViewController.swift */,
+				84DC065A26CEA52700A8BC86 /* VideoViewModel.swift */,
+				84DC065C26CEA58800A8BC86 /* VideoNavigator.swift */,
+				84DC065E26CEA73D00A8BC86 /* VideoDelegate.swift */,
+			);
+			path = VideoScreen;
 			sourceTree = "<group>";
 		};
 		8418B4C826C57547001D6BB8 /* App */ = {
@@ -532,6 +568,7 @@
 				8480C41E26C2BFD800057641 /* Resources */,
 				B06029FF609FA4B23D6B8F6D /* [CP] Embed Pods Frameworks */,
 				84F2ED9626C7C9BC00AB2F5E /* ShellScript */,
+				84169DBD26CD5B640028FB66 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -593,6 +630,7 @@
 				84C82B7926C426F0007BA959 /* Categories.storyboard in Resources */,
 				8483C07F26C7761500A0794A /* Search.storyboard in Resources */,
 				8480C42B26C2BFD800057641 /* Main.storyboard in Resources */,
+				84169D9526CD50990028FB66 /* Video.storyboard in Resources */,
 				84C16BBC26CBEF3A009B45FD /* CategoryImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,6 +731,7 @@
 				842B91B626C91FD7005CB0D1 /* InstructionCell.swift in Sources */,
 				84A1CDE226C8C0F6003D7728 /* MealRequest.swift in Sources */,
 				8480C42826C2BFD800057641 /* MealTabBarController.swift in Sources */,
+				84DC065F26CEA73D00A8BC86 /* VideoDelegate.swift in Sources */,
 				84EDBF4926CA9D2C0006CB4A /* HomeViewController.swift in Sources */,
 				84C82B5726C41A37007BA959 /* BaseError.swift in Sources */,
 				8483C09926C7807A00A0794A /* MealByCategoryNavigator.swift in Sources */,
@@ -700,12 +739,15 @@
 				84C16BAD26CBE419009B45FD /* HomeNavigator.swift in Sources */,
 				842B91B126C91F9A005CB0D1 /* IngredientCell.swift in Sources */,
 				8498BB4126C42CF900128300 /* CategoriesViewModel.swift in Sources */,
+				84DC065B26CEA52700A8BC86 /* VideoViewModel.swift in Sources */,
 				844387D226C8101D00C678CA /* FoodResouce.swift in Sources */,
+				84169D9826CD50BA0028FB66 /* VideoViewController.swift in Sources */,
 				841E835726CBC0FE006CE9D7 /* FavoriteViewController.swift in Sources */,
 				842B91A126C90BAD005CB0D1 /* MealDetailViewController.swift in Sources */,
 				84C82B4E26C41A37007BA959 /* BaseResult.swift in Sources */,
 				84C16B9F26CBE382009B45FD /* HomeViewModel.swift in Sources */,
 				8418B4BF26C564C2001D6BB8 /* CategoriesNavigator.swift in Sources */,
+				84DC065D26CEA58800A8BC86 /* VideoNavigator.swift in Sources */,
 				84C82B4D26C41A37007BA959 /* CustomRequestAdapter.swift in Sources */,
 				8480C42426C2BFD800057641 /* AppDelegate.swift in Sources */,
 				8418B4BB26C55CBA001D6BB8 /* ViewControllerType.swift in Sources */,
@@ -870,6 +912,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CookBookMVVM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -890,6 +936,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CookBookMVVM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

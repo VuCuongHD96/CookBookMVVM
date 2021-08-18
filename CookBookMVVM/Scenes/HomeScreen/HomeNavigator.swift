@@ -34,7 +34,6 @@ struct HomeNavigator: HomeNavigatorType {
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    
     func toMealDetailScreen(data: Meal) {
         let navigator = MealDetailNavigator(navigationController: navigationController)
         let useCase = MealDetailUseCase()

@@ -22,6 +22,7 @@ protocol MealDetailViewModelType {
     // MARK: - Action
     var buttonFavoriteDidTap: Void { get set }
     var buttonBackDidTap: Void { get set }
+    var buttonYoutubeDidTap: Void { get set }
 }
 
 final class MealDetailViewModel: MealDetailViewModelType {
@@ -84,6 +85,11 @@ final class MealDetailViewModel: MealDetailViewModelType {
     var buttonBackDidTap: Void {
         didSet {
             navigator.toPreviousScreen()
+        }
+    }
+    var buttonYoutubeDidTap: Void {
+        didSet {
+            navigator.toVideoScreen(with: meal)
         }
     }
 }

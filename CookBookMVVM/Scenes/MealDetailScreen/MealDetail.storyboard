@@ -142,6 +142,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhW-Nc-h4P">
                                             <rect key="frame" x="367" y="150" width="32" height="32"/>
                                             <state key="normal" image="youtube"/>
+                                            <connections>
+                                                <action selector="youtubeAction:" destination="kuF-Lz-hYc" eventType="touchUpInside" id="gaA-qL-c0r"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
