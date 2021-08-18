@@ -13,9 +13,11 @@ final class HomeMealDatasourceDelegate: NSObject {
     struct Constant {
         static let cellHeight: CGFloat = 200
     }
+    typealias MealHandler = (Meal) -> Void
     
     // MARK: - Property
     var mealArray = [Meal]()
+    var didSelectedMeal: MealHandler?
     
     init(mealArray: [Meal]) {
         self.mealArray = mealArray
@@ -40,5 +42,11 @@ extension HomeMealDatasourceDelegate: UITableViewDataSource {
 extension HomeMealDatasourceDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constant.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let meal = mealArray[row]
+        didSelectedMeal?(meal)
     }
 }

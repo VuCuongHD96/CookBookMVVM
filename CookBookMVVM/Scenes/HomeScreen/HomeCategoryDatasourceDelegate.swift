@@ -14,9 +14,11 @@ final class HomeCategoryDatasourceDelegate: NSObject {
         static let cellHeight: CGFloat = 128
         static let cellWidth: CGFloat = 208
     }
+    typealias CategoryHandler = (Category) -> Void
     
     // MARK: - Property
     var categoryArray = [Category]()
+    var didSelectCategory: CategoryHandler?
     
     init(categoryArray: [Category]) {
         self.categoryArray = categoryArray
@@ -36,6 +38,14 @@ extension HomeCategoryDatasourceDelegate: UICollectionViewDataSource {
         let cell: CategoryImageCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.setContent(data: category)
         return cell
+    }
+}
+
+extension HomeCategoryDatasourceDelegate: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let category = categoryArray[row] 
+        didSelectCategory?(category)
     }
 }
 
