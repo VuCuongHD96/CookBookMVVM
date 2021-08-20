@@ -16,6 +16,7 @@ target 'CookBookMVVM' do
   pod 'Alamofire', '~> 4.9.1'	
   pod 'ObjectMapper'
   pod 'SkeletonView'
+  pod "youtube-ios-player-helper"
 
 
 end

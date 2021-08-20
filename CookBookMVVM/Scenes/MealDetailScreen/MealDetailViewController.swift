@@ -63,6 +63,10 @@ final class MealDetailViewController: UIViewController {
     @IBAction func backAction(_ sender: Any) {
         viewModel.buttonBackDidTap = Void()
     }
+    
+    @IBAction func youtubeAction(_ sender: Any) {
+        viewModel.buttonYoutubeDidTap = Void()
+    }
 }
 
 extension MealDetailViewController: ViewControllerType {
