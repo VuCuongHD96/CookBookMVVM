@@ -10,6 +10,7 @@ import Reusable
 import RxSwift
 import RxCocoa
 import NSObject_Rx
+import MGArchitecture
 
 final class CategoryViewController: UIViewController {
 
@@ -25,6 +26,13 @@ final class CategoryViewController: UIViewController {
             .drive()
             .disposed(by: rx.disposeBag)
             
+    }
+}
+
+extension CategoryViewController: BindableType {
+    
+    func bindViewModel() {
+        
     }
 }
 

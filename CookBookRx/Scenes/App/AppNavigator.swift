@@ -16,7 +16,7 @@ struct AppNavigator: AppNavigatorType {
     unowned let window: UIWindow
     
     func toMain() {
-        let viewController = ViewController.instantiate()
+        let viewController = TabbarController.instantiate()
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.isNavigationBarHidden = true
         window.rootViewController = navigationController
