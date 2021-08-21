@@ -41,6 +41,12 @@ extension CategoryViewController: ViewControllerType {
     
     // MARK: - Data
     func setupData() {
+    }
+}
+
+extension CategoryViewController: BindableType {
+    
+    func bindViewModel() {
         let input = CategoryViewModel.Input(loadTrigger: Driver.just(Void()),
                                             selectTrigger: tableView.rx.itemSelected.asDriver(),
                                             searchTrigger: searchButton.rx.tap.asDriver())

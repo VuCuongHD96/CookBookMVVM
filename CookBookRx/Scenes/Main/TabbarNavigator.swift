@@ -26,10 +26,11 @@ struct TabbarNavigator: TabbarNavigatorType {
     
     func createCategoryScreen() -> UIViewController {
         let useCase = CategoryUseCase()
-        let navigator = CategoryNavigator(navigatorViewController: navigationController)
+        let navigator = CategoryNavigator(navigationController: navigationController)
         let viewModel = CategoryViewModel(useCase: useCase, navigator: navigator)
         let viewController = CategoryViewController.instantiate()
         viewController.viewModel = viewModel
+        viewController.bindViewModel(to: viewModel)
         viewController.tabBarItem = createCategoryTabbarItem()
         return viewController
     }
@@ -47,7 +48,7 @@ struct TabbarNavigator: TabbarNavigatorType {
         let viewModel = HomeViewModel(navigator: navigator, useCase: useCase)
         let viewController = HomeViewController.instantiate()
         viewController.viewModel = viewModel
-        viewController.bindViewModel()
+        viewController.bindViewModel(to: viewModel)
         viewController.tabBarItem = createHomeTabbarItem()
         return viewController
     }

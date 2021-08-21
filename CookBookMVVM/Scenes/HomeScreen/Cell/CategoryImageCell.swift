@@ -8,6 +8,7 @@
 import UIKit
 import Reusable
 import SkeletonView
+import SDWebImage
 
 final class CategoryImageCell: UICollectionViewCell, NibReusable {
 
