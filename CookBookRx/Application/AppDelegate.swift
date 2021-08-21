@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+import NSObject_Rx
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,20 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        toMainScreen()
+        bindViewModel()
         return true
     }
     
-    private func toMainScreen() {
+    private func bindViewModel() {
         guard let window = window else {
             return
         }
-        let story = UIStoryboard(name: "Main", bundle: nil)
-        guard let viewController = story.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
-            return
-        }
-        window.rootViewController = viewController
-        window.makeKeyAndVisible()
+        let navigator = AppNavigator(window: window)
+        let viewModel = AppViewModel(navigator: navigator)
+        let input = AppViewModel.Input(loadTrigger: Driver.just(Void()))
+        let output = viewModel.transform(input)
+        
+        output.toMain
+            .drive()
+            .disposed(by: rx.disposeBag)
     }
 }
 
