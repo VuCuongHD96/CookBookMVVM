@@ -5,7 +5,7 @@
 def shareLib
   
   # API
-  pod 'Alamofire', '~> 4.9.1'
+  pod 'Alamofire', '~> 5.0.0-rc.3'
   pod 'ObjectMapper'
   
   # View

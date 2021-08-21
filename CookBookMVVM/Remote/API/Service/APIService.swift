@@ -7,14 +7,13 @@ import ObjectMapper
 
 struct APIService {
     static let share = APIService()
-    private var alamofireManager = Alamofire.SessionManager.default
+    private var alamofireManager = Alamofire.Session.default
 
     init() {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 30
         configuration.timeoutIntervalForResource = 30
-        alamofireManager = Alamofire.SessionManager(configuration: configuration)
-        alamofireManager.adapter = CustomRequestAdapter()
+        alamofireManager = Alamofire.Session(configuration: configuration)
     }
 
     func request<T: Mappable>(input: BaseRequest, completion: @escaping (_ value: T?, _ error: BaseError?) -> Void) {
@@ -46,7 +45,7 @@ struct APIService {
                         completion(nil, BaseError.apiFailure(error: error))
                     }
                 case .failure(let error):
-                    completion(nil, error as? BaseError)
+                    completion(nil, BaseError.apiFailure(error: error as? ErrorResponse))
                 }
         }
     }
