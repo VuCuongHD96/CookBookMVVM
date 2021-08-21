@@ -26,7 +26,7 @@ extension AppViewModel {
         
         let toMain = input.loadTrigger
             .do { _ in
-                navigator.toCategory()
+                navigator.toMain()
             }
         
         return Output(toMain: toMain)
