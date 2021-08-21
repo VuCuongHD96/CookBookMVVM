@@ -26,9 +26,9 @@ final class CategoryTitleCell: UITableViewCell, NibReusable {
     }
     
     // MARK: - Data
-    func setContent(category: Category) {
-        if category.name != "" {
-            categoryLabel.text = category.name
+    func setContent(data: Category) {
+        if data.name != "" {
+            categoryLabel.text = data.name
             categoryLabel.hideSkeleton()            
         }
     }
