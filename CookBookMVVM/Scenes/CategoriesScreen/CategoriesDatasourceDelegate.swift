@@ -31,7 +31,7 @@ extension CategoriesDatasourceDelegate: UITableViewDataSource {
         let category = categories[row]
         
         let cell: CategoryTitleCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.setContent(category: category)
+        cell.setContent(data: category)
         return cell
     }
 }

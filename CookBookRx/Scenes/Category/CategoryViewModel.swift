@@ -12,17 +12,22 @@ import MGArchitecture
 
 struct CategoryViewModel {
     let useCase: CategoryUseCaseType
+    let navigator: CategoryNavigatorType
 }
 
 extension CategoryViewModel: ViewModelType {
     struct Input {
         let loadTrigger: Driver<Void>
+        let selectTrigger: Driver<IndexPath>
+        let searchTrigger: Driver<Void>
     }
     
     struct Output {
         let categories: Driver<[Category]>
         let error: Driver<Error>
         let indicator: Driver<Bool>
+        let selected: Driver<Void>
+        let search: Driver<Void>
     }
     
     func transform(_ input: Input) -> Output {
@@ -39,10 +44,26 @@ extension CategoryViewModel: ViewModelType {
                     .asDriverOnErrorJustComplete()
             }.startWith(startData)
         
+        let selected = input.selectTrigger
+            .withLatestFrom(categories) { (indexPath, categories) -> Category in
+                let row = indexPath.row
+                let category = categories[row]
+                return category
+            }.do { category in
+                navigator.toMealByCategory(data: category)
+            }.mapToVoid()
+        
+        let search = input.searchTrigger
+            .do(onNext: {
+                navigator.toSearch()
+            })
+        
         return Output(
             categories: categories,
             error: error.asDriver(),
-            indicator: indicator.asDriver()
+            indicator: indicator.asDriver(),
+            selected: selected,
+            search: search
         )
     }
 }

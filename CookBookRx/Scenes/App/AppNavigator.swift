@@ -9,7 +9,6 @@ import UIKit
 
 protocol AppNavigatorType {
     func toMain()
-    func toCategory()
 }
 
 struct AppNavigator: AppNavigatorType {
@@ -20,14 +19,5 @@ struct AppNavigator: AppNavigatorType {
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.isNavigationBarHidden = true
         window.rootViewController = navigationController
-    }
-    
-    func toCategory() {
-//        let navigator = CategoryNavigator(navigatorViewController: <#T##UIViewController#>)
-        let useCase = CategoryUseCase()
-        let viewModel = CategoryViewModel(useCase: useCase)
-        let viewController = CategoryViewController.instantiate()
-        viewController.viewModel = viewModel
-        window.rootViewController = viewController
     }
 }
