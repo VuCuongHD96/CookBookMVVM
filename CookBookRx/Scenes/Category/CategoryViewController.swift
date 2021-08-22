@@ -68,6 +68,11 @@ extension CategoryViewController: BindableType {
         output.search
             .drive()
             .disposed(by: rx.disposeBag)
+        
+        output.error
+            .drive {
+                print("----- error ------ ")
+            }
     }
 }
 

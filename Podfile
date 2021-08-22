@@ -18,7 +18,7 @@ def shareLib
   pod 'Then'
 
   # Data Base
-  pod 'RealmSwift', '~> 5.0.0'
+#  pod 'RealmSwift', '~> 5.0.0'
   
 end
 

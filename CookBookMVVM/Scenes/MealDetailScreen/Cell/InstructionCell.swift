@@ -24,7 +24,7 @@ final class InstructionCell: UITableViewCell, NibReusable {
     }
     
     // MARK: - Data
-    func setupContent(data: String, index: Int) {
+    func setContent(data: String, index: Int) {
         instructionLabel.text = data
         numberLabel.text = String(index + 1)
     }
