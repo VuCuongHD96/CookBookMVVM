@@ -19,7 +19,7 @@ struct CategoryNavigator: CategoryNavigatorType {
     func toMealByCategory(data: Category) {
         let navigator = MealByCategoryNavigator(navigationController: navigationController)
         let useCase = MealByCategoryUseCase()
-        let viewModel = MealByCategoryViewModel(navigator: navigator, useCase: useCase)
+        let viewModel = MealByCategoryViewModel(navigator: navigator, useCase: useCase, category: data)
         let viewController = MealByCategoryViewController.instantiate()
         viewController.viewModel = viewModel
         viewController.bindViewModel(to: viewModel)
