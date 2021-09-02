@@ -53,7 +53,7 @@ extension MealDetailDataSourceDelegate: UITableViewDataSource {
         case 1:
             let data = listInstruction[row]
             let cell: InstructionCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.setupContent(data: data, index: row)
+            cell.setContent(data: data, index: row)
             return cell
         default:
             return UITableViewCell()
