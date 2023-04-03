@@ -14,8 +14,8 @@ struct HomeViewModel {
     let useCase: HomeUseCaseType
 }
 
-extension HomeViewModel: ViewModelType {
-    
+extension HomeViewModel: ViewModel {
+ 
     struct Input {
         let loadTrigger: Driver<Void>
         let searchTrigger: Driver<Void>
@@ -31,8 +31,8 @@ extension HomeViewModel: ViewModelType {
         let search: Driver<Void>
     }
     
-    func transform(_ input: Input) -> Output {
-        
+    func transform(_ input: Input, disposeBag: RxSwift.DisposeBag) -> Output {
+
         let indicator = ActivityIndicator()
         let error = ErrorTracker()
         

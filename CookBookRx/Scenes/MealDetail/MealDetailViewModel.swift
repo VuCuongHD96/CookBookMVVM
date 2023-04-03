@@ -14,7 +14,7 @@ struct MealDetailViewModel {
     let useCase: MealDetailUseCaseType
 }
 
-extension MealDetailViewModel: ViewModelType {
+extension MealDetailViewModel: ViewModel {
     
     struct Input {
         
@@ -24,8 +24,7 @@ extension MealDetailViewModel: ViewModelType {
         
     }
     
-    func transform(_ input: Input) -> Output {
-        
+    func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
         return Output()
     }
 }

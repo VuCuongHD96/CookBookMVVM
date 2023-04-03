@@ -23,7 +23,7 @@ final class MealDetailViewController: UIViewController {
     }
 }
 
-extension MealDetailViewController: BindableType {
+extension MealDetailViewController: Bindable {
     func bindViewModel() {
         
     }

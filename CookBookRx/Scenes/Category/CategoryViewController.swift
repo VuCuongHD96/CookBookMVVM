@@ -44,13 +44,13 @@ extension CategoryViewController: ViewControllerType {
     }
 }
 
-extension CategoryViewController: BindableType {
+extension CategoryViewController: Bindable {
     
     func bindViewModel() {
         let input = CategoryViewModel.Input(loadTrigger: Driver.just(Void()),
                                             selectTrigger: tableView.rx.itemSelected.asDriver(),
                                             searchTrigger: searchButton.rx.tap.asDriver())
-        let output = viewModel.transform(input)
+        let output = viewModel.transform(input, disposeBag: rx.disposeBag)
         
         output.categories
             .drive(tableView.rx.items) { tableView, index, category in
@@ -67,6 +67,12 @@ extension CategoryViewController: BindableType {
         
         output.search
             .drive()
+            .disposed(by: rx.disposeBag)
+
+        output.error
+            .drive(onNext: { error in
+                print("----- error ----- = ", error)
+            })
             .disposed(by: rx.disposeBag)
     }
 }

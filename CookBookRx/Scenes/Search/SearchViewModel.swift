@@ -6,13 +6,14 @@
 //
 
 import MGArchitecture
+import RxSwift
 
 struct SearchViewModel {
     let navigator: SearchNavigatorType
     let useCase: SearchUseCaseType
 }
 
-extension SearchViewModel: ViewModelType {
+extension SearchViewModel: ViewModel {
     
     struct Input {
         
@@ -22,7 +23,7 @@ extension SearchViewModel: ViewModelType {
         
     }
     
-    func transform(_ input: Input) -> Output {
+    func transform(_ input: Input, disposeBag: RxSwift.DisposeBag) -> Output {
         return Output()
     }
 }
