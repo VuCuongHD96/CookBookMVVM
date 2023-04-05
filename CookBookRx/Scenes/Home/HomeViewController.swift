@@ -59,7 +59,7 @@ extension HomeViewController: ViewControllerType {
     }
 }
 
-extension HomeViewController: BindableType {
+extension HomeViewController: Bindable {
     
     func bindViewModel() {
         
@@ -67,7 +67,7 @@ extension HomeViewController: BindableType {
                                         searchTrigger: searchButton.rx.tap.asDriver(),
                                         categorySelectTrigger: collectionView.rx.itemSelected.asDriver(),
                                         mealSelectTrigger: tableView.rx.itemSelected.asDriver())
-        let output = viewModel.transform(input)
+        let output = viewModel.transform(input, disposeBag: rx.disposeBag)
         
         output.categories
             .drive(collectionView.rx.items) { collectionView, index, category in

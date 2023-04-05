@@ -16,9 +16,6 @@ def shareLib
   pod 'Toast-Swift', '~> 5.0.1'
   pod 'Reusable'
   pod 'Then'
-
-  # Data Base
-  pod 'RealmSwift', '~> 5.0.0'
   
 end
 
@@ -41,7 +38,7 @@ def libForCookBookRx
   pod 'MGArchitecture'
 
   # Rx
-  pod 'RxSwift', '~> 4.5.0'
+  pod 'RxSwift'
   pod 'NSObject+Rx'
   pod 'RxDataSources'
 

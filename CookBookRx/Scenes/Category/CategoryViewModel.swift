@@ -15,7 +15,7 @@ struct CategoryViewModel {
     let navigator: CategoryNavigatorType
 }
 
-extension CategoryViewModel: ViewModelType {
+extension CategoryViewModel: ViewModel {
     struct Input {
         let loadTrigger: Driver<Void>
         let selectTrigger: Driver<IndexPath>
@@ -30,12 +30,12 @@ extension CategoryViewModel: ViewModelType {
         let search: Driver<Void>
     }
     
-    func transform(_ input: Input) -> Output {
+    func transform(_ input: Input, disposeBag: RxSwift.DisposeBag) -> Output {
         let indicator = ActivityIndicator()
         let error = ErrorTracker()
         
         let startData = Array(repeating: Category(), count: 10)
-            
+        
         let categories = input.loadTrigger
             .flatMapLatest { _ in
                 return self.useCase.getCategories()

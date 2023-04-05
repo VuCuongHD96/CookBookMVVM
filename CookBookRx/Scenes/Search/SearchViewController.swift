@@ -21,7 +21,7 @@ final class SearchViewController: UIViewController {
     }
 }
 
-extension SearchViewController: BindableType {
+extension SearchViewController: Bindable {
     func bindViewModel() {
         
     }

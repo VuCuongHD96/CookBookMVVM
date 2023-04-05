@@ -55,14 +55,14 @@ extension MealByCategoryViewController: ViewControllerType {
     }
 }
 
-extension MealByCategoryViewController: BindableType {
+extension MealByCategoryViewController: Bindable {
     
     func bindViewModel() {
         
         let input = MealByCategoryViewModel.Input(loadTrigger: Driver.just(Void()),
                                                   backTrigger: backButton.rx.tap.asDriver(),
                                                   searchTrigger: searchButton.rx.tap.asDriver())
-        let output = viewModel.transform(input)
+        let output = viewModel.transform(input, disposeBag: rx.disposeBag)
         
         output.meals
             .drive(tableView.rx.items) { tableView, row, meal in

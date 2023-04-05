@@ -15,8 +15,8 @@ struct MealByCategoryViewModel {
     let category: Category
 }
 
-extension MealByCategoryViewModel: ViewModelType {
-    
+extension MealByCategoryViewModel: ViewModel {
+ 
     struct Input {
         let loadTrigger: Driver<Void>
         let backTrigger: Driver<Void>
@@ -32,7 +32,7 @@ extension MealByCategoryViewModel: ViewModelType {
         let searchDidTap: Driver<Void>
     }
     
-    func transform(_ input: Input) -> Output {
+    func transform(_ input: Input, disposeBag: RxSwift.DisposeBag) -> Output {
         let error = ErrorTracker()
         let indicator = ActivityIndicator()
         
